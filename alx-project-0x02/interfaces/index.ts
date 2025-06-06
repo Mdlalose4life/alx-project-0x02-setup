@@ -1,5 +1,4 @@
-export interface headerProp{
-    name: string;
-    surname: string;
-    age: number
+export interface CardProps{
+    title: string;
+    content: string;
 }
