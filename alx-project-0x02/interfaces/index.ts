@@ -8,3 +8,8 @@ export interface PostModalProps {
     onClose: () => void;
     onSubmit: (data: { title: string; content: string }) => void;
   }
+
+  export interface ButtonProp {
+    tittle: string;
+    style: string;
+  }

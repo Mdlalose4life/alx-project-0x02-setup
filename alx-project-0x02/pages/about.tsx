@@ -1,9 +1,13 @@
-const About: React.FC = () => {
-    return (
-            <h1>
-                Welcome to the About page
-            </h1>
-    )
-}
+import Button from "@/components/common/Button"
 
-export default About
+const Landing: React.FC = () => {
+    return (
+      <div>
+        <h1 className=" text-xl font-extralight">About Page</h1>
+        <Button title="Small Button" styles="text-sm rounded-sm"/>
+        <Button title="Medium Button" styles="text-md rounded-md"/>
+        <Button title="Big Button" styles="text-lg rounded-lg"  />
+      </div>
+    )
+  }
+export default Landing
