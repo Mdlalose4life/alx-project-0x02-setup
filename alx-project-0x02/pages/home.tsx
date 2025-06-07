@@ -15,6 +15,7 @@ const Home: React.FC = () => {
 
     return (
         <>
+        <Header/>
          <div className="p-6">
             <button onClick={()=> setModalOpen(true)} className="mv-4 px4 py-2 bg-green-500 text-white rounded">
                 Create New Post
