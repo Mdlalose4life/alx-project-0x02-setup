@@ -9,7 +9,7 @@ export interface PostModalProps {
     onSubmit: (data: { title: string; content: string }) => void;
   }
 
-  export interface ButtonProp {
+  export interface ButtonProps {
     tittle: string;
     style: string;
   }
