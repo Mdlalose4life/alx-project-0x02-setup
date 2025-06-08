@@ -1,19 +1,7 @@
 import { PostProps } from "@/interfaces";
-import { useEffect, useState } from "react";
+import { GetStaticProps } from "next";
 
-
-const PostsCard: React.FC<PostProps> = () => {
-    const [posts, setPosts] = useState<PostProps[]>([]);
-
-    useEffect(() => {
-        const fetchPosts = async () => {
-            const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-            const data = await response.json()
-            setPosts(data)
-        }
-        fetchPosts();
-    } , []);
-
+const PostsCard: React.FC<PostProps> = ({posts}) => {
     return (
       <div>
         {posts.map((post, index) => (
@@ -26,5 +14,16 @@ const PostsCard: React.FC<PostProps> = () => {
       </div>
     )
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const posts: Post[] = await response.json();
+
+    return{
+        props: {
+            posts,
+        },
+    };
+};
 
 export default PostsCard
